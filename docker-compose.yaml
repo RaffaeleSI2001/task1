@@ -1,0 +1,31 @@
+services:
+  
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./.db:/var/lib/mysql
+  
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - "8060:8080"
+  
+  tomcat:
+    image: tomcat:latest
+    restart: unless-stopped
+    ports:
+      - "8050:8080"
+    depends_on:
+      - db
+    volumes:
+      # Mount your built WAR into Tomcat’s ROOT context
+      - ./demo/target/demo-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
