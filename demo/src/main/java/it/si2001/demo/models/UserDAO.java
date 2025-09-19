@@ -35,12 +35,11 @@ public class UserDAO {
 
     public User getUserById(Long id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(User.class, id);
+            return session.find(User.class, id);
         }
     }
 
     public List<User> getAllUsers() {
-        // FIX: ?
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from User", User.class).list();
         }
@@ -50,7 +49,7 @@ public class UserDAO {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            User user = session.get(User.class, id);
+            User user = session.find(User.class, id);
             if (user != null) {
                 session.remove(user);
             }
