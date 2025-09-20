@@ -55,7 +55,6 @@ public class HibernateUtil {
         return sessionFactory;
     }
     
-    /** Gracefully shuts down the SessionFactory, releasing all resources. */
     public static void shutdown() {
         getSessionFactory().close();
     }

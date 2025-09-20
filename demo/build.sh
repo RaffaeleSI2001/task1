@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 mvn clean
-mvn compile
+# mvn compile
 mvn package

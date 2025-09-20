@@ -25,5 +25,4 @@ services:
     depends_on:
       - db
     volumes:
-      # Mount your built WAR into Tomcat’s ROOT context
       - ./demo/target/demo-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war

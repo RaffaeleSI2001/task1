@@ -12,13 +12,13 @@
     width: 100%;
     margin-top: 20px;
   }
-
+  
   th, td {
     border: 1px solid #333;
     padding: 8px;
     text-align: left;
   }
-
+  
   th {
     background-color: #f2f2f2;
     font-weight: bold;
@@ -51,10 +51,10 @@
             <td>${user.id}</td>
             <td>${user.firstName} ${user.lastName}</td>
             <td>${user.birthDay}</td>
-            <!-- WIP: EDIT/DELETE -->
+            <!-- EDIT/DELETE -->
             <td>
-              <a href="/update_user">Edit</a>
-              <a href="/delete/${user.id}" onclick="return confirm('Are you sure?')">Delete</a>
+              <a href="/update_user?id=${user.id}">Edit</a>
+              <a href="/delete_user?id=${user.id}" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
           </tr>
         </c:forEach>

@@ -31,8 +31,6 @@ public class ListUsersServlet extends HttpServlet {
   }
   
   protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    String action = req.getParameter("action");
-    if (action == null) action = "list";
     try {
     	listUsers(req, res);
     } catch (SQLException e) {

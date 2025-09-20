@@ -1,6 +1,6 @@
 package it.si2001.demo.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,64 +25,54 @@ public class User {
   private String lastName;
 
   @Column(name = "birthday")
-  private LocalDateTime birthDay;
+  private LocalDate birthDay;
 
   
   public User() {}
 
-  public User(String firstName, String lastName, LocalDateTime birthDay) {
+  public User(String firstName, String lastName, LocalDate birthDay) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthDay = birthDay;
   }
   
-  public User(Long id, String firstName, String lastName, LocalDateTime birthDay) {
+  public User(Long id, String firstName, String lastName, LocalDate birthDay) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthDay = birthDay;
   }
-    
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public LocalDateTime getBirthDay() {
-        return birthDay;
-    }
-
-    public void setBirthDay(LocalDateTime birthDay) {
-        this.birthDay = birthDay;
-    }
-
-    @Override
-    public java.lang.String toString() {
-        return "Utenti{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthDay=" + birthDay +
-                '}';
-    }
+  
+  public Long getId() {
+      return id;
+  }
+  
+  public void setId(Long id) {
+      this.id = id;
+  }
+  
+  public String getFirstName() {
+      return firstName;
+  }
+  
+  public void setFirstName(String firstName) {
+      this.firstName = firstName;
+  }
+  
+  public String getLastName() {
+      return lastName;
+  }
+  
+  public void setLastName(String lastName) {
+      this.lastName = lastName;
+  }
+  
+  public LocalDate getBirthDay() {
+      return birthDay;
+  }
+  
+  public void setBirthDay(LocalDate birthDay) {
+      this.birthDay = birthDay;
+  }
+  
 }
